@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdint.h>
 
 struct addrinfo {
     int             ai_flags;
@@ -22,4 +23,8 @@ struct soccadr_in {
     unsigned short int  sin_port;
     struct in_addr      sin_addr;
     unsigned char       sin_zero[8];
-}
+};
+
+struct in_addr {
+    uint32_t     s_addr;
+};
