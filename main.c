@@ -28,3 +28,15 @@ struct soccadr_in {
 struct in_addr {
     uint32_t     s_addr;
 };
+
+struct sockaddr_in6 {
+    uint16_t       sin6_family;
+    uint16_t       sin6_port;
+    uint32_t       sin6_flowinfo;
+    struct in_addr  sin_addr;
+    uint32_t       sin6_scope_id;
+};
+
+struct in6_addr {
+    unsigned char   sb_addr[16];
+};
