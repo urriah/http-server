@@ -1,5 +1,9 @@
 #include <stdlib.h>
 #include <stdint.h>
+#include <sys/socket.h>
+
+
+typedef sa_family_t;
 
 struct addrinfo {
     int             ai_flags;
@@ -39,4 +43,18 @@ struct sockaddr_in6 {
 
 struct in6_addr {
     unsigned char   sb_addr[16];
+};
+
+#define _SS_MAXSIZE 128 
+#define _SS_ALIGNSIZE (sizeof (int64_t)) 
+              
+#define _SS_PAD1SIZE (_SS_ALIGNSIZE - sizeof (sa_family_t)) 
+#define _SS_PAD2SIZE (_SS_MAXSIZE - (sizeof (sa_family_t) + _SS_PAD1SIZE + _SS_ALIGNSIZE))
+
+struct sockaddr_storage{
+    sa_family_t     ss_family;
+
+    char        __ss_pad1[_SS_PAD1SIZE];
+    int64_t     __ss_align;
+    char        __ss_pad2[_SS_PAD2SIZE];
 };
