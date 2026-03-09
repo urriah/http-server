@@ -11,3 +11,8 @@ struct addrinfo {
 
     struct addrinfo     *ai_next;
 };
+
+struct sockaddr {
+    unsigned short      sa_family;
+    char                sa_data[14];
+};
