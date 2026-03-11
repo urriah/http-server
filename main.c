@@ -42,3 +42,5 @@ struct socaddr_in6 {
 struct in6_addr {
     unsigned char      s6_addr[16];
 };
+
+//test
