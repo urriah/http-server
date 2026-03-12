@@ -31,7 +31,7 @@ struct in_addr {
 };
 
 // ipv6
-struct socaddr_in6 {
+struct sockaddr_in6 {
     uint16_t           sin6_family;
     uint16_t           sin6_port;
     uint32_t           sin6_flowinfo;
@@ -41,5 +41,13 @@ struct socaddr_in6 {
 
 struct in6_addr {
     unsigned char      s6_addr[16];
+};
+
+struct sockaddr_storage {
+    ss_family_t   ss_family;
+
+    char      __ss_pad1[__SS_PAD1SIZE];
+    uint64_t  __ss_align;
+    char      __ss_pad2[__SS_PAD2SIZE];
 };
 
