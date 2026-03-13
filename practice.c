@@ -1,6 +1,3 @@
-#include <stdlib.h>
-#include <stdint.h>
-
 struct addrinfo {
     int                 ai_flags;
     int                 ai_family;
