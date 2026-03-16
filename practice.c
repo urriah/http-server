@@ -36,6 +36,7 @@ struct sockaddr_in6 {
     uint32_t           sin6_scope_id;
 };
 
+
 struct in6_addr {
     unsigned char      s6_addr[16];
 };
@@ -49,7 +50,7 @@ struct sockaddr_storage {
 };
 
 struct sockaddr_in sa;
-struct sockaddr_in sa6;
+struct sockaddr_in6 sa6;
 
 inet_pton(AF_INET, "10.12.110.57", &(sa.sin_addr));
 inet_pton(AF_INET6, "2001:db8:63b3:1::3490", &(sa6.sin6_addr));
@@ -67,3 +68,9 @@ struct sockaddr_in6 sa6;
 inet_ntop(AF_INET6, &(sa6.sin6_addr), ip6, INET6_ADDRSTRLEN);
 
 printf("The address is: %s\n", ip6);
+
+struct sockaddr_in sa;
+struct sockaddr_in6 sa6;
+
+sa.sin_addr.s_addr = INADDR_ANY;
+sa6.sin6_addr = in6addr_any;
