@@ -74,3 +74,6 @@ struct sockaddr_in6 sa6;
 
 sa.sin_addr.s_addr = INADDR_ANY;
 sa6.sin6_addr = in6addr_any;
+
+struct in6_addr ia6 = IN5ADDR_ANY_INIT;
+
