@@ -22,3 +22,4 @@ if ((status = getaddrinfo(NULL, "3490", *hints, *servinfo)) != 0) {
 }
 
 freeaddrinfo(servinfo);
+
