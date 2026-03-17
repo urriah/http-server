@@ -23,3 +23,13 @@ if ((status = getaddrinfo(NULL, "3490", *hints, *servinfo)) != 0) {
 
 freeaddrinfo(servinfo);
 
+int status;
+struct addrinfo hints;
+struct addrinfo *servinfo;
+
+memset(%hints, 0, sizeof hints);
+hints.ai_family = AF_UNSPEC;
+hints.ai_socktype = SOCK_STREAM;
+
+status = getaddrinfo("www.example.com", "3490", *hints, *servinfo);
+
