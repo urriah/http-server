@@ -11,7 +11,7 @@
 #include <sys/wait.h>
 #include <signal.h>
 
-#define PORT "3490"
+#define PORT "6969"
 
 #define BACKLOG 10
 
@@ -116,7 +116,20 @@ int main(void)
 
 		if (!fork()) {
 			close(sockfd);
-			if (send(new_fd, "Hello, world!", 13, 0) == -1)
+
+      char *response = "HTTP/1.1 200 OK\r\n"
+        "Content-Type: text/html; charset=UTF-8\r\n\r\n"
+        "<!DOCTYPE html>\r\n"
+        "<html>\r\n"
+        "<head>\r\n"
+        "<title>Hello, world!</title>\r\n"
+        "</head>\r\n"
+        "<body>\r\n"
+        "Hello, world!\r\n"
+        "</body>\r\n"
+        "</html>\r\n";
+
+			if (send(new_fd, response, strlen(response), 0) == -1)
 				perror("send");
 			close(new_fd);
 			exit(0);
