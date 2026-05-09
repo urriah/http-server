@@ -118,16 +118,8 @@ int main(void)
 			close(sockfd);
 
       char *response = "HTTP/1.1 200 OK\r\n"
-        "Content-Type: text/html; charset=UTF-8\r\n\r\n"
-        "<!DOCTYPE html>\r\n"
-        "<html>\r\n"
-        "<head>\r\n"
-        "<title>Hello, world!</title>\r\n"
-        "</head>\r\n"
-        "<body>\r\n"
-        "Hello, world!\r\n"
-        "</body>\r\n"
-        "</html>\r\n";
+        "Content-Type: text/plain\r\n\r\n"
+        "Hello, world!";
 
 			if (send(new_fd, response, strlen(response), 0) == -1)
 				perror("send");
