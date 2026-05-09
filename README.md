@@ -1,5 +1,5 @@
 # http-server
- >c program to send a string
+ >c program to send a response
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
